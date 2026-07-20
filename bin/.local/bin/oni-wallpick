@@ -5,5 +5,5 @@ W="$HOME/Pictures/walls"
 PICK=$(ls "$W" 2>/dev/null | grep -Ei '\.(png|jpg|jpeg|webp)$' \
        | wofi --dmenu --prompt "wallpaper" --style "$HOME/.cache/oni/wofi.css") || exit 0
 [ -n "$PICK" ] || exit 0
-swww img "$W/$PICK" --transition-type grow --transition-duration 1
+awww img "$W/$PICK" --transition-type grow --transition-duration 1
 matugen image "$W/$PICK"
