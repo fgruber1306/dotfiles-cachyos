@@ -1,0 +1,26 @@
+// Oni · eww theme
+$mint: #5fe0c0; $mintdim: #2e8f79; $ice: #9db8c4; $oni: #e5484d;
+$ink: #c9d2cf; $dim: #66716e;
+
+* { all: unset; font-family: "JetBrainsMono Nerd Font"; }
+
+.wg {
+  background-color: rgba(8, 11, 11, 0.82);
+  border: 1px solid rgba(95, 224, 192, 0.13);
+  border-radius: 11px;
+  padding: 12px 13px;
+}
+.eyebrow { font-size: 9px; letter-spacing: 2px; color: $mintdim; margin-bottom: 8px; }
+.t1  { font-family: "Chakra Petch"; font-size: 13px; font-weight: 600; color: $ink; }
+.t2  { font-size: 10px; color: $dim; margin-top: 3px; }
+.t3  { font-size: 9.5px; color: $dim; margin-top: 8px; }
+.big { font-family: "Chakra Petch"; font-size: 20px; font-weight: 700; color: $ink; }
+
+.bar { margin-top: 9px; border-radius: 2px; background-color: #131b19; min-height: 4px; }
+.bar.mint progress, .bar.mint trough highlight { background-color: $mint; border-radius: 2px; }
+.bar.ice  progress, .bar.ice  trough highlight { background-color: $ice;  border-radius: 2px; }
+
+.netgraph { color: $mint; background-color: rgba(19, 27, 25, 0.6); border-radius: 6px; min-height: 36px; margin-bottom: 7px; }
+.vpn { font-size: 9px; margin-top: 8px; }
+.vpn.ok  { color: $mint; }
+.vpn.bad { color: $oni; }

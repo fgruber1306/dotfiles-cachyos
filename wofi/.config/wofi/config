@@ -1,0 +1,9 @@
+show=drun
+width=380
+lines=6
+prompt=❯
+allow_images=true
+image_size=18
+insensitive=true
+hide_scroll=true
+key_expand=Tab

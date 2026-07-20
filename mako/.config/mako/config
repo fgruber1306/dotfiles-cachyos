@@ -1,0 +1,16 @@
+# Oni · mako
+font=JetBrainsMono Nerd Font 10
+background-color=#030606f0
+text-color=#c9d2cf
+border-color=#5fe0c038
+border-size=1
+border-radius=10
+padding=12
+margin=8
+width=320
+default-timeout=5000
+anchor=top-right
+
+[urgency=critical]
+border-color=#e5484d
+default-timeout=0

@@ -1,0 +1,43 @@
+@import url("../../.cache/oni/colors-waybar.css");
+/* Oni · waybar — text floating on true black */
+* {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 11px;
+  min-height: 0;
+}
+window#waybar {
+  background: transparent;
+  color: #66716e;
+}
+#workspaces button {
+  padding: 0 5px;
+  color: #66716e;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  border-bottom: 2px solid transparent;
+  transition: color .2s;
+}
+#workspaces button:hover { color: #c9d2cf; box-shadow: none; }
+#workspaces button.active {
+  color: @accent;
+  border-bottom: 2px solid @accent;
+}
+#workspaces button.urgent { color: #e5484d; }
+#window { padding: 0 14px; color: #66716e; }
+#clock {
+  color: #c9d2cf;
+  font-weight: 700;
+}
+#cpu, #temperature, #memory, #network, #pulseaudio, #tray {
+  padding: 0 8px;
+  color: #66716e;
+}
+#temperature { color: #9db8c4; }
+#temperature.critical { color: #e5484d; }
+#network.disconnected { color: #e5484d; }
+tooltip {
+  background: rgba(3, 6, 6, 0.94);
+  border: 1px solid rgba(95, 224, 192, 0.22);
+  border-radius: 8px;
+}

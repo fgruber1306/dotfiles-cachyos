@@ -1,0 +1,8 @@
+# ── Oni additions — append to /etc/fstab (verify UUIDs/labels first!) ──
+
+# Games partition (ext4, mounted straight into home)
+LABEL=games  /home/fabi/Games  ext4  defaults,noatime  0 2
+
+# Grubanas NAS (NFS, mounts on access, never blocks boot)
+192.168.188.88:/volume1/media  /mnt/nas/media  nfs4  noauto,x-systemd.automount,x-systemd.idle-timeout=60,_netdev,noatime  0 0
+192.168.188.88:/volume1/roms   /mnt/nas/roms   nfs4  noauto,x-systemd.automount,x-systemd.idle-timeout=60,_netdev,noatime  0 0

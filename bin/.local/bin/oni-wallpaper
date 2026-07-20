@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Set per-monitor wallpapers. Drop files into ~/Pictures/walls/
+W=~/Pictures/walls
+swww img -o DP-1 "$W/left.png"   --transition-type fade 2>/dev/null
+swww img -o DP-2 "$W/yamato.png" --transition-type fade 2>/dev/null
+swww img -o DP-3 "$W/right.png"  --transition-type fade 2>/dev/null

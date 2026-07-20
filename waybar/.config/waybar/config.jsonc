@@ -1,0 +1,46 @@
+// Oni · waybar — minimal borderless
+{
+  "layer": "top",
+  "position": "top",
+  "height": 32,
+  "spacing": 0,
+  "modules-left": ["hyprland/workspaces", "hyprland/window"],
+  "modules-center": ["clock"],
+  "modules-right": ["cpu", "temperature", "memory", "network", "pulseaudio", "tray"],
+
+  "hyprland/workspaces": {
+    "format": "{id}",
+    "on-click": "activate",
+    "persistent-workspaces": { "*": 5 }
+  },
+  "hyprland/window": {
+    "format": "{title}",
+    "max-length": 45,
+    "separate-outputs": true
+  },
+  "clock": {
+    "format": "{:%H:%M}",
+    "format-alt": "{:%a %d %b · W%V}",
+    "tooltip-format": "<tt>{calendar}</tt>"
+  },
+  "cpu": { "format": "cpu {usage}%", "interval": 3 },
+  "temperature": {
+    "hwmon-path-abs": "/sys/devices/pci0000:00",
+    "input-filename": "temp1_input",
+    "format": "{temperatureC}°",
+    "critical-threshold": 85
+  },
+  "memory": { "format": "ram {used:0.1f}G" },
+  "network": {
+    "format-wifi": "wifi {signalStrength}%",
+    "format-ethernet": "eth",
+    "format-disconnected": "offline",
+    "tooltip-format": "{ifname} · {ipaddr}"
+  },
+  "pulseaudio": {
+    "format": "vol {volume}",
+    "format-muted": "mute",
+    "on-click": "pavucontrol"
+  },
+  "tray": { "spacing": 8 }
+}

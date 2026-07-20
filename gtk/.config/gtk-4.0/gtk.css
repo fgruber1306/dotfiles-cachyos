@@ -1,0 +1,7 @@
+/* Oni accent for libadwaita apps (Nautilus etc.) */
+:root {
+  --accent-bg-color: #2e8f79;
+  --accent-fg-color: #eafffa;
+  --accent-color: #5fe0c0;
+}
+window { background-color: #050808; }

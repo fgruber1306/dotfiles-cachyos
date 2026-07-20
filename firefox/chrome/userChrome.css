@@ -1,0 +1,28 @@
+/* Oni · Firefox — slim dark tabs
+   Needs: toolkit.legacyUserProfileCustomizations.stylesheets = true */
+:root {
+  --oni-bg: #050908;
+  --oni-panel: #0b1513;
+  --oni-mint: #5fe0c0;
+  --oni-ink: #c9d2cf;
+  --tab-min-height: 30px !important;
+}
+#navigator-toolbox {
+  background: var(--oni-bg) !important;
+  border-bottom: 1px solid #14201d !important;
+}
+.tabbrowser-tab .tab-background {
+  border-radius: 6px !important;
+  margin: 3px 1px !important;
+}
+.tabbrowser-tab[selected] .tab-background {
+  background: var(--oni-panel) !important;
+  outline: 1px solid #16211f !important;
+}
+#urlbar-background {
+  background: var(--oni-panel) !important;
+  border: none !important;
+  border-radius: 6px !important;
+}
+#urlbar { color: var(--oni-ink) !important; }
+#TabsToolbar { min-height: 34px !important; }

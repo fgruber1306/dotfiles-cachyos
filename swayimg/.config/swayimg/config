@@ -1,0 +1,19 @@
+# Oni · swayimg
+[general]
+mode = viewer
+
+[viewer]
+window = #000000ff
+transparency = #000000ff
+scale = optimal
+slideshow_time = 4
+
+[keys.viewer]
+n = next_file
+p = prev_file
+Right = next_file
+Left = prev_file
+Space = mode_slideshow
+f = fullscreen
+i = info
+q = exit

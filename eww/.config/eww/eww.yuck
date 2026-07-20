@@ -1,0 +1,51 @@
+;; Oni · eww widgets — RA · games disk · network
+
+;; ── data sources ──────────────────────────────────────────────
+(defpoll ra    :interval "120s" :initial '{"game":"—","progress":"","pct":0,"last":"","pts":0}'
+  "scripts/ra.sh")
+(defpoll disk  :interval "300s" :initial '{"free":"…","total":"","pct":0,"legend":""}'
+  "scripts/games-disk.sh")
+(deflisten net :initial '{"down":"0","up":"0","ip":"…","iface":"—","vpn":false}'
+  "scripts/net.sh")
+
+;; ── widgets ───────────────────────────────────────────────────
+(defwidget eyebrow [l r]
+  (box :class "eyebrow" :space-evenly false
+    (label :halign "start" :hexpand true :text l)
+    (label :halign "end" :text r)))
+
+(defwidget w-ra []
+  (box :class "wg" :orientation "v" :space-evenly false
+    (eyebrow :l "RETROACHIEVEMENTS" :r "hardcore")
+    (label :class "t1" :halign "start" :limit-width 26 :text {ra.game})
+    (label :class "t2" :halign "start" :text {ra.progress})
+    (progress :class "bar mint" :value {ra.pct})
+    (label :class "t3" :halign "start" :visible {ra.last != ""}
+           :text "🏆 ${ra.last} · +${ra.pts}")))
+
+(defwidget w-disk []
+  (box :class "wg" :orientation "v" :space-evenly false
+    (eyebrow :l "~/GAMES" :r "ext4")
+    (label :class "big" :halign "start" :text "${disk.free} free")
+    (progress :class "bar ice" :value {disk.pct})
+    (label :class "t3" :halign "start" :text {disk.legend})))
+
+(defwidget w-net []
+  (box :class "wg" :orientation "v" :space-evenly false
+    (eyebrow :l "NETWORK" :r {net.iface})
+    (graph :class "netgraph" :value {net.down} :time-range "2m"
+           :min 0 :max 60 :dynamic true :thickness 1.5)
+    (box :space-evenly true :class "t2"
+      (label :halign "start" :text "↓ ${net.down} MB/s")
+      (label :halign "end"   :text "↑ ${net.up} MB/s"))
+    (label :class {net.vpn ? "vpn ok" : "vpn bad"} :halign "start"
+           :text {net.vpn ? "● ${net.ip} · protected" : "● VPN DOWN"})))
+
+;; ── window ────────────────────────────────────────────────────
+(defwindow oni-widgets
+  :monitor 1                        ;; center GO27Q24G — adjust if needed
+  :geometry (geometry :x "16px" :y "46px" :width "230px" :anchor "top left")
+  :stacking "bg"
+  :exclusive false
+  (box :orientation "v" :space-evenly false :spacing 9
+    (w-ra) (w-disk) (w-net)))
