@@ -4,20 +4,20 @@
 [config]
 
 [templates.hyprland]
-input_path  = "~/dotfiles/matugen/templates/hyprland.tmpl"
+input_path  = "~/.config/matugen/templates/hyprland.tmpl"
 output_path = "~/.cache/oni/colors-hyprland.conf"
 post_hook   = "hyprctl reload"
 
 [templates.kitty]
-input_path  = "~/dotfiles/matugen/templates/kitty.tmpl"
+input_path  = "~/.config/matugen/templates/kitty.tmpl"
 output_path = "~/.cache/oni/colors-kitty.conf"
 post_hook   = "pkill -USR1 kitty || true"
 
 [templates.waybar]
-input_path  = "~/dotfiles/matugen/templates/waybar.tmpl"
+input_path  = "~/.config/matugen/templates/waybar.tmpl"
 output_path = "~/.cache/oni/colors-waybar.css"
 post_hook   = "pkill waybar; hyprctl dispatch exec waybar"
 
 [templates.wofi]
-input_path  = "~/dotfiles/matugen/templates/wofi.tmpl"
+input_path  = "~/.config/matugen/templates/wofi.tmpl"
 output_path = "~/.cache/oni/wofi.css"
